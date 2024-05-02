@@ -1,13 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { footerStyles } from './footer.module';
+import { ActivityItem } from '../../molecules/footer/activityItem';
+import { HomeItem } from '../../molecules/footer/homeItem';
+import { WorkOutItem } from '../../molecules/footer/workOutItem';
 
 export const Footer = () => {
   return (
     <View style={footerStyles.footer}>
-      <Text>ワークアウト</Text>
-      <Text>ホーム</Text>
-      <Text>アクティビティ</Text>
+      <View style={footerStyles.footerItem}>
+        <WorkOutItem />
+        <HomeItem />
+        <ActivityItem />
+      </View>
     </View>
   );
 };

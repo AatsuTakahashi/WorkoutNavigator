@@ -11,4 +11,9 @@ export const footerStyles = StyleSheet.create({
     //将来的には#FFFFFFにしたい。
     backgroundColor: '#90EE90',
   },
+  footerItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
 });

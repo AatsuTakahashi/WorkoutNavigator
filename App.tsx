@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import Home from './src/App';
-import { Header } from './src/components/molecules/header/header';
-import { Footer } from './src/components/molecules/footer/footer';
+import { Header } from './src/components/organisms/header/header';
+import { Footer } from './src/components/organisms/footer/footer';
 
 export default function App() {
   return (
