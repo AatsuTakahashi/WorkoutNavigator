@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import { footerStyles } from './footer.module';
-import { ActivityItem } from '../../molecules/footer/activityItem';
-import { HomeItem } from '../../molecules/footer/homeItem';
-import { WorkOutItem } from '../../molecules/footer/workOutItem';
+import { footerStyles } from './Footer.module';
+import { ActivityItem } from '../../molecules/footer/ActivityItem';
+import { HomeItem } from '../../molecules/footer/HomeItem';
+import { WorkOutItem } from '../../molecules/footer/WorkOutItem';
 
 export const Footer = () => {
   return (

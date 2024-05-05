@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { WorkOutIcon } from '../../atoms/footerItem/footerIcon';
-import { WorkOutText } from '../../atoms/footerItem/footerText';
-import { footerStyles } from '../../organisms/footer/footer.module';
+import { WorkOutIcon } from '../../atoms/footerItem/FooterIcon';
+import { WorkOutText } from '../../atoms/footerItem/FooterText';
+import { footerStyles } from '../../organisms/footer/Footer.module';
 
 export const WorkOutItem = () => {
   return (

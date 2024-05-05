@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ActivityIcon } from '../../atoms/footerItem/footerIcon';
-import { ActivityText } from '../../atoms/footerItem/footerText';
-import { footerStyles } from '../../organisms/footer/footer.module';
+import { ActivityIcon } from '../../atoms/footerItem/FooterIcon';
+import { ActivityText } from '../../atoms/footerItem/FooterText';
+import { footerStyles } from '../../organisms/footer/Footer.module';
 
 export const ActivityItem = () => {
   return (

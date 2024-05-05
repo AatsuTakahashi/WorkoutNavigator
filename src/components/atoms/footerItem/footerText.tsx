@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { FOOTER_TEXT } from '../../../constants/footerText';
-import { footerTextStyles } from './footerItem.module';
+import { FOOTER_TEXT } from '../../../constants/FooterText';
+import { footerTextStyles } from './FooterItem.module';
 
 export const WorkOutText = () => {
   return (
