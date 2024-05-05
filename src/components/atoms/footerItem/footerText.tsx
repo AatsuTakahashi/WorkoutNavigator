@@ -1,27 +1,28 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { FOOTER_TEXT } from '../../../constants/footerText';
+import { footerTextStyles } from './footerItem.module';
 
 export const WorkOutText = () => {
   return (
-    <View>
-      <Text>{FOOTER_TEXT.WORKOUT}</Text>
+    <View style={footerTextStyles.container}>
+      <Text style={footerTextStyles.footerText}>{FOOTER_TEXT.WORKOUT}</Text>
     </View>
   );
 };
 
 export const HomeText = () => {
   return (
-    <View>
-      <Text>{FOOTER_TEXT.HOME}</Text>
+    <View style={footerTextStyles.container}>
+      <Text style={footerTextStyles.footerText}>{FOOTER_TEXT.HOME}</Text>
     </View>
   );
 };
 
 export const ActivityText = () => {
   return (
-    <View>
-      <Text>{FOOTER_TEXT.ACTIVITY}</Text>
+    <View style={footerTextStyles.container}>
+      <Text style={footerTextStyles.footerText}>{FOOTER_TEXT.ACTIVITY}</Text>
     </View>
   );
 };

@@ -1,31 +1,28 @@
-import {
-  faChartLine,
-  faHouse,
-  faPersonWalking,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { View } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
+import { footerIconStyles } from './footerItem.module';
 
 export const WorkOutIcon = () => {
   return (
-    <View>
-      <FontAwesomeIcon icon={faPersonWalking} />{' '}
+    <View style={footerIconStyles.container}>
+      <FontAwesome5 name='list-alt' size={25} />
     </View>
   );
 };
 
 export const HomeIcon = () => {
   return (
-    <View>
-      <FontAwesomeIcon icon={faHouse} />
+    <View style={footerIconStyles.container}>
+      <FontAwesome5 name='home' size={25} />
     </View>
   );
 };
 
 export const ActivityIcon = () => {
   return (
-    <View>
-      <FontAwesomeIcon icon={faChartLine} />
+    <View style={footerIconStyles.container}>
+      <Feather name='activity' size={25} />
     </View>
   );
 };
