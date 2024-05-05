@@ -20,9 +20,11 @@ export const headerStyles = StyleSheet.create({
     height: 50,
     borderRadius: 50,
     right: 70,
+    marginLeft: 5,
   },
   menuIcon: {
     left: 140,
     top: 5,
+    marginRight: 5,
   },
 });
