@@ -1,15 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import Home from './src/App';
-import { Header } from './src/components/organisms/header/header';
-import { Footer } from './src/components/organisms/footer/footer';
+import Main from './src/components/templates/App';
 
 export default function App() {
   return (
     <View style={styles.main}>
-      <Header />
-      <Home />
-      <Footer />
+      <Main />
       <StatusBar style='auto' />
     </View>
   );
