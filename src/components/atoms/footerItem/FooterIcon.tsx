@@ -1,7 +1,8 @@
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
 import { footerIconStyles } from './FooterItem.module';
+import { PressableProps } from '../../../types/PressableProps';
 
 export const WorkOutIcon = () => {
   return (
@@ -11,10 +12,12 @@ export const WorkOutIcon = () => {
   );
 };
 
-export const HomeIcon = () => {
+export const HomeIcon: React.FC<PressableProps> = ({ onPress }) => {
   return (
     <View style={footerIconStyles.container}>
-      <FontAwesome5 name='home' size={25} />
+      <Pressable onPress={onPress}>
+        <FontAwesome5 name='home' size={25} />
+      </Pressable>
     </View>
   );
 };

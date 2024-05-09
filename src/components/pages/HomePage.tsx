@@ -1,13 +1,15 @@
 import React from 'react';
-import MainTemplate from '../templates/MainTemplate';
-import { Text, View } from 'react-native';
+import MainTemplate from '../templates/MainTemplate/MainTemplate';
+import WelcomeMessage from '../molecules/message/WelcomeMessage';
+import { WELCOME_MESSAGE } from '../../constants/Message';
+import { Text } from 'react-native';
 
 const HomePage: React.FC = () => {
   return (
     <MainTemplate>
-      <View>
-        <Text>テスト ホームページ</Text>
-      </View>
+      <WelcomeMessage message={WELCOME_MESSAGE} />
+      <Text>ワークアウトを設定</Text>
+      <Text>グループで共有する</Text>
     </MainTemplate>
   );
 };
