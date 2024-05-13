@@ -13,7 +13,7 @@ export default function App() {
     <View style={AppStyles.container}>
       <Header />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='WorkOut'>
+        <Stack.Navigator initialRouteName='Home'>
           <Stack.Screen
             name='Home'
             component={HomePage}
