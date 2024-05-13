@@ -11,7 +11,6 @@ interface MainTemplateProps {
 const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
   return (
     <View style={styles.container}>
-      <Header />
       <View>{children}</View>
       <Footer />
     </View>
