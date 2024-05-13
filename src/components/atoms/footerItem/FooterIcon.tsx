@@ -4,10 +4,12 @@ import Feather from 'react-native-vector-icons/Feather';
 import { footerIconStyles } from './FooterItem.module';
 import { PressableProps } from '../../../types/PressableProps';
 
-export const WorkOutIcon = () => {
+export const WorkOutIcon: React.FC<PressableProps> = ({ onPress }) => {
   return (
     <View style={footerIconStyles.container}>
-      <FontAwesome5 name='list-alt' size={25} />
+      <Pressable onPress={onPress}>
+        <FontAwesome5 name='list-alt' size={25} />
+      </Pressable>
     </View>
   );
 };
