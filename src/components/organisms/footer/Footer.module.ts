@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLOR_CODE } from '../../../constants/ColorCode';
 
 export const footerStyles = StyleSheet.create({
   footer: {
@@ -8,9 +9,9 @@ export const footerStyles = StyleSheet.create({
     justifyContent: 'center',
     position: 'absolute',
     bottom: 0,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLOR_CODE.WHITE,
     borderTopWidth: 1,
-    borderTopColor: '#F5F5F5',
+    borderTopColor: COLOR_CODE.WHITE_SMOKE,
   },
   footerItem: {
     flexDirection: 'row',

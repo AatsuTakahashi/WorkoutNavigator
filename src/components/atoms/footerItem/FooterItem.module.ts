@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLOR_CODE } from '../../../constants/ColorCode';
 
 export const footerIconStyles = StyleSheet.create({
   container: {
@@ -15,6 +16,6 @@ export const footerTextStyles = StyleSheet.create({
     paddingBottom: 10,
   },
   footerText: {
-    color: '#0A0017',
+    color: COLOR_CODE.JET_BLACK,
   },
 });

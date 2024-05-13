@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLOR_CODE } from '../../../constants/ColorCode';
 
 export const headerStyles = StyleSheet.create({
   header: {
@@ -6,9 +7,9 @@ export const headerStyles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLOR_CODE.WHITE,
     borderBottomWidth: 1,
-    borderColor: '#F5F5F5',
+    borderColor: COLOR_CODE.WHITE_SMOKE,
   },
   container: {
     flexDirection: 'row',
