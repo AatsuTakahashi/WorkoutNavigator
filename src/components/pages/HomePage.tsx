@@ -1,6 +1,6 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate/MainTemplate';
-import WelcomeMessage from '../molecules/message/WelcomeMessage';
+import WelcomeMessage from '../atoms/message/WelcomeMessage';
 import { WELCOME_MESSAGE } from '../../constants/Message';
 import { Text } from 'react-native';
 
