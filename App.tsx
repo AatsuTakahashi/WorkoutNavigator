@@ -5,6 +5,7 @@ import HomePage from './src/components/pages/HomePage';
 import WorkOutPage from './src/components/pages/WorkOutPage';
 import { StyleSheet, View } from 'react-native';
 import { Header } from './src/components/organisms/header/Header';
+import { Footer } from './src/components/organisms/footer/Footer';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
+        <Footer />
       </NavigationContainer>
     </View>
   );
