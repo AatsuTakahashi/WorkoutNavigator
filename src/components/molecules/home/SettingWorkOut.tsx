@@ -10,7 +10,9 @@ const SettingWorkOut = () => {
       <Text style={HomeContentStyle.TitleText}>
         <HomeContentMessage message={SETTING_MESSAGE.TITLE} />
       </Text>
-      <HomeContentMessage message={SETTING_MESSAGE.TEXT} />
+      <Text style={HomeContentStyle.ExplanationText}>
+        <HomeContentMessage message={SETTING_MESSAGE.EXPLANATION} />
+      </Text>
     </View>
   );
 };

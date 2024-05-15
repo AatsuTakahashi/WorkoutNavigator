@@ -9,11 +9,19 @@ export const HomeContentStyle = StyleSheet.create({
     marginRight: 30,
     borderRadius: 15,
     height: 120,
-    backgroundColor: COLOR_CODE.GRAYISH_WHITE,
+    backgroundColor: COLOR_CODE.STEEL_COLOR,
   },
   TitleText: {
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: 'bold',
+    paddingLeft: 10,
+    paddingTop: 5,
+    color: COLOR_CODE.WHITE,
+  },
+  ExplanationText: {
+    fontSize: 10,
     fontWeight: 'bold',
     padding: 10,
+    color: COLOR_CODE.WHITE,
   },
 });

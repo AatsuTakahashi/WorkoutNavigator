@@ -10,7 +10,9 @@ const ShareGroup = () => {
       <Text style={HomeContentStyle.TitleText}>
         <HomeContentMessage message={SHARE_GROUP_MESSAGE.TITLE} />
       </Text>
-      <HomeContentMessage message={SHARE_GROUP_MESSAGE.TEXT} />
+      <Text style={HomeContentStyle.ExplanationText}>
+        <HomeContentMessage message={SHARE_GROUP_MESSAGE.EXPLANATION} />
+      </Text>
     </View>
   );
 };
