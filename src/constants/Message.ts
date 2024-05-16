@@ -1,4 +1,8 @@
-export const WELCOME_MESSAGE = 'ようこそ';
+export const WELCOME_MESSAGE = {
+  WORK_OUT_MESSAGE: 'ワークアウトを管理しましょう',
+  HOME_MESSAGE: 'ようこそ',
+};
+
 export const SETTING_MESSAGE = {
   TITLE: 'ワークアウトを設定',
   EXPLANATION:
@@ -8,4 +12,7 @@ export const SHARE_GROUP_MESSAGE = {
   TITLE: 'グループで共有する',
   EXPLANATION:
     'ここではワークをグループと共有することができます。プロジェクトの概要や進捗状況を共有し、チームメンバーが最新情報を把握することで、効率的に作業を進めることができます。',
+};
+export const PLACEHOLDER_MESSAGE = {
+  INITIAL_VALUE: '入力してください。',
 };
