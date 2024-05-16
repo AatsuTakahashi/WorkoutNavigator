@@ -9,7 +9,7 @@ export const HomeContentStyle = StyleSheet.create({
     marginRight: 30,
     borderRadius: 15,
     height: 120,
-    backgroundColor: COLOR_CODE.STEEL_COLOR,
+    backgroundColor: COLOR_CODE.SILVERY_WHITE,
   },
   TitleText: {
     fontSize: 25,

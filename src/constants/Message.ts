@@ -13,6 +13,9 @@ export const SHARE_GROUP_MESSAGE = {
   EXPLANATION:
     'ここではワークをグループと共有することができます。プロジェクトの概要や進捗状況を共有し、チームメンバーが最新情報を把握することで、効率的に作業を進めることができます。',
 };
+export const BUTTON_TEXT_MESSAGE = {
+  RECORD_WORK_OUT: 'ワークアウトを記録する',
+};
 export const PLACEHOLDER_MESSAGE = {
   INITIAL_VALUE: '入力してください。',
 };

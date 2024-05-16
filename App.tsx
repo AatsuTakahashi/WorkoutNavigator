@@ -6,6 +6,7 @@ import WorkOutPage from './src/components/pages/WorkOutPage';
 import { StyleSheet, View } from 'react-native';
 import { Header } from './src/components/organisms/header/Header';
 import { Footer } from './src/components/organisms/footer/Footer';
+import WorkOutRecordPage from './src/components/pages/WorkOutRecordPage';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,11 @@ export default function App() {
           <Stack.Screen
             name='WorkOut'
             component={WorkOutPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='WorkOutRecord'
+            component={WorkOutRecordPage}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

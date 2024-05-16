@@ -2,6 +2,7 @@ import { Image, View } from 'react-native';
 import initialIcon from '../../../assets/unknownPersonIcon.png';
 import { headerStyles } from '../../organisms/header/Header.module';
 import Feather from 'react-native-vector-icons/Feather';
+import React from 'react';
 
 export const UserIcon = () => {
   return (

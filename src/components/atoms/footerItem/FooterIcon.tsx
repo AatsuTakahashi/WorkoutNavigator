@@ -3,6 +3,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
 import { footerIconStyles } from './FooterItem.module';
 import { PressableProps } from '../../../types/PressableProps';
+import React from 'react';
 
 export const WorkOutIcon: React.FC<PressableProps> = ({ onPress }) => {
   return (

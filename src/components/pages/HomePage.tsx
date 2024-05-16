@@ -8,7 +8,7 @@ import HomeContent from '../organisms/home/HomeContent';
 const HomePage: React.FC = () => {
   return (
     <MainTemplate>
-      <WelcomeMessage message={WELCOME_MESSAGE} />
+      <WelcomeMessage message={WELCOME_MESSAGE.HOME_MESSAGE} />
       <HomeContent />
     </MainTemplate>
   );
