@@ -3,16 +3,11 @@ import { HomeIcon } from '../../atoms/footerItem/FooterIcon';
 import { View } from 'react-native';
 import { HomeText } from '../../atoms/footerItem/FooterText';
 import { footerStyles } from '../../organisms/footer/Footer.module';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../../RootStackParamList/RootStackParamList';
+import { useAppNavigation } from '../../../navigation/Navigation';
 
-export const HomeItem = () => {
-  const navigation =
-    useNavigation<NavigationProp<RootStackParamList, 'Home'>>();
+export const HomeItem: React.FC = () => {
+  const { navigateToHome } = useAppNavigation();
 
-  const navigateToHome = () => {
-    navigation.navigate('Home');
-  };
   return (
     <View style={footerStyles.HomeItem}>
       <HomeIcon onPress={() => navigateToHome()} />

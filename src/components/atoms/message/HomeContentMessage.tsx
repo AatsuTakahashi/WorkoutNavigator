@@ -9,7 +9,7 @@ interface HomeContentMessageProps {
 const HomeContentMessage: React.FC<HomeContentMessageProps> = ({ message }) => {
   return (
     <View>
-      <Text style={ContentMessageStyle.contentText}>{message}</Text>
+      <Text>{message}</Text>
     </View>
   );
 };

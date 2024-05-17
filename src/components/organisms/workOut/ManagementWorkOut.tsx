@@ -1,18 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import ButtonAtoms from '../../atoms/button/ButtonAtoms';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../../RootStackParamList/RootStackParamList';
 import { BUTTON_TEXT_MESSAGE } from '../../../constants/Message';
 import { WorkOutStyles } from './ManagementWorkOut.module';
+import { useAppNavigation } from '../../../navigation/Navigation';
 
-const ManagementWorkOut = () => {
-  const navigation =
-    useNavigation<NavigationProp<RootStackParamList, 'WorkOutRecord'>>();
+const ManagementWorkOut: React.FC = () => {
+  const { navigateToWorkOutRecord } = useAppNavigation();
 
-  const navigateToWorkOutRecord = () => {
-    navigation.navigate('WorkOutRecord');
-  };
   return (
     <View>
       <ButtonAtoms
