@@ -1,3 +1,11 @@
 {
-  "ignoreWords": ["fortawesome", "fontawesome", "Pressable"]
+  "ignoreWords": [
+    "fortawesome",
+    "fontawesome",
+    "Pressable",
+    "formik"
+  ],
+  "words": [
+    "datetimepicker"
+  ]
 }
