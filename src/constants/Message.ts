@@ -20,3 +20,18 @@ export const BUTTON_TEXT_MESSAGE = {
 export const PLACEHOLDER_MESSAGE = {
   INITIAL_VALUE: '入力してください。',
 };
+
+export const FORM_MESSAGE = {
+  CALENDER_TITLE: '日付を選択してください',
+  DATE_PICKER_TEXT: '日付を選択',
+  DATE_FORMAT: 'yyyy年M月d日',
+  DATE_PICKER_BUTTON_TEXT: 'ここを押して日付を選択してください',
+  FORM_TITLE: 'タイトル',
+  FORM_CONTENT: '内容',
+  FORM_OTHERS: 'その他',
+  TEXT_INPUT: '入力してください。',
+  DECIDE_BUTTON_TEXT: '決定',
+  SEND_BUTTON_TEXT: '送信',
+  VALIDATION_TITLE: 'タイトルは必須です。',
+  VALIDATION_CONTENT: '内容は必須です。',
+};

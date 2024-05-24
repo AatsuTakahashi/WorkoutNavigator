@@ -1,10 +1,13 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import Modal from 'react-native-modal';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-
-const THEME_COLOR: string = '#36C1A7';
+import ButtonAtoms from '../button/ButtonAtoms';
+import { COLOR_CODE } from '../../../constants/ColorCode';
+import { ModalStyles } from './CalenderModal.module';
+import { LeftArrowIcon } from '../icon/LeftArrowIcon';
+import { RightArrowIcon } from '../icon/RightArrowIcon';
+import { FORM_MESSAGE } from '../../../constants/Message';
 
 const formatDate = (date: Date): string => {
   let format: string = 'YYYY-MM-DD';
@@ -68,37 +71,46 @@ export default class CalenderModal extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { visible, minDate, maxDate, onConfirm } = this.props;
+    const { visible, minDate, maxDate } = this.props;
     const { selectedDate } = this.state;
     const selectedDateText: string = formatDate(selectedDate);
 
     return (
       <Modal isVisible={visible}>
-        <View>
-          <Text>日付を選択してください。</Text>
+        <View style={ModalStyles.container}>
+          <Text style={ModalStyles.titleText}>
+            {FORM_MESSAGE.CALENDER_TITLE}
+          </Text>
           <Calendar
             current={selectedDateText}
             markedDates={{
               [selectedDateText]: {
                 selected: true,
-                selectedColor: THEME_COLOR,
+                selectedColor: COLOR_CODE.SILVERY_WHITE,
               },
             }}
             minDate={minDate ? formatDate(minDate) : undefined}
             maxDate={maxDate ? formatDate(maxDate) : undefined}
             renderArrow={(direction: 'left' | 'right') => {
               if (direction === 'left') {
-                return <AntDesign name='left' />;
+                return <LeftArrowIcon size={30} />;
               } else {
-                return <AntDesign name='right' />;
+                return <RightArrowIcon size={30} />;
               }
             }}
             theme={{
-              todayTextColor: THEME_COLOR,
+              todayTextColor: COLOR_CODE.BRONZE_RED,
             }}
             onDayPress={this.handlePressDay}
           />
-          <Button title='決定' onPress={this.handlePressConfirmButton} />
+          <View style={ModalStyles.confirmButtonContainer}>
+            <ButtonAtoms
+              buttonText={FORM_MESSAGE.DECIDE_BUTTON_TEXT}
+              onPress={this.handlePressConfirmButton}
+              buttonStyle={ModalStyles.confirmButton}
+              textStyle={ModalStyles.confirmButtonText}
+            />
+          </View>
         </View>
       </Modal>
     );

@@ -15,8 +15,8 @@ const GoBack: React.FC = () => {
         style={GoBackStyles.container}
         onPress={() => navigateToWorkOut()}
       >
-        <LeftArrowIcon size={40} />
-        <Text style={GoBackStyles.textStyle}>
+        <LeftArrowIcon size={30} />
+        <Text style={GoBackStyles.text}>
           <HomeContentMessage message={BUTTON_TEXT_MESSAGE.GO_BACK} />
         </Text>
       </Pressable>

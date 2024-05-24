@@ -6,10 +6,11 @@ export const GoBackStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
+    margin: 5,
     color: COLOR_CODE.JET_BLACK,
+    width: 100,
   },
-  textStyle: {
+  text: {
     fontSize: 20,
-    fontWeight: '800',
   },
 });
