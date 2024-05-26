@@ -1,15 +1,15 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
 import ButtonAtoms from '../../atoms/button/ButtonAtoms';
 import { BUTTON_TEXT_MESSAGE } from '../../../constants/Message';
 import { WorkOutStyles } from './ManagementWorkOut.module';
 import { useAppNavigation } from '../../../navigation/Navigation';
-import { useFormData } from '../../../context/FormContext';
-import { format } from 'date-fns';
+import useFetchCollection from '../../../hooks/useFetchCollection';
+import { formatDate } from '../../../utils/dataFormatter';
 
 const ManagementWorkOut: React.FC = () => {
-  const { formData } = useFormData();
   const { navigateToWorkOutRecord } = useAppNavigation();
+  const { data: workouts, loading, error } = useFetchCollection('workouts');
 
   return (
     <View>
@@ -19,45 +19,20 @@ const ManagementWorkOut: React.FC = () => {
         buttonStyle={WorkOutStyles.buttonStyles}
         textStyle={WorkOutStyles.buttonText}
       />
-      {formData && (
-        <ScrollView
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          style={WorkOutStyles.formDataContainer}
-        >
-          {/* <Text>{formData.date ? format(formData.date, 'M/d') : ''}</Text>
-          <Text>{formData.title}</Text> */}
-          {/* テスト */}
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト1</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト2</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト3</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト4</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト5</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト6</Text>
-          </View>
-          <View style={WorkOutStyles.test1}>
-            <Text>5/27</Text>
-            <Text>テスト7</Text>
-          </View>
-        </ScrollView>
-      )}
+      <ScrollView>
+        {loading ? (
+          <ActivityIndicator size={'large'} color='#0000ff' />
+        ) : error ? (
+          <Text>{error}</Text>
+        ) : (
+          workouts.map((workout) => (
+            <View key={workout.id}>
+              <Text>{workout.date ? formatDate(workout.date) : 'No Date'}</Text>
+              <Text>{workout.title}</Text>
+            </View>
+          ))
+        )}
+      </ScrollView>
     </View>
   );
 };

@@ -14,8 +14,9 @@ import { format } from 'date-fns';
 import { FormStyles } from './InputForm.module';
 import { FORM_MESSAGE } from '../../../constants/Message';
 import { useFormData } from '../../../context/FormContext';
-import { useNavigation } from '@react-navigation/native';
 import { useAppNavigation } from '../../../navigation/Navigation';
+import { db } from '../../../../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
 
 interface InputFormProps {
   onSubmit: (values: {
@@ -51,18 +52,50 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
     others: Yup.string(),
   });
 
+  const saveDataToFirestore = async (data: {
+    title: string;
+    content: string;
+    others: string;
+    date: Date | null;
+  }) => {
+    console.log('Inside saveDataToFirestore'); // デバッグ用ログ
+    try {
+      console.log('Attempting to save data to Firestore:', data); // デバッグ用ログ
+      await addDoc(collection(db, 'workouts'), data);
+      console.log('Data saved successfully');
+    } catch (error) {
+      console.error('Error saving data:', error);
+      throw error; // エラーを再スロー
+    }
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View>
         <Formik
           initialValues={{ title: '', content: '', others: '' }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
+          onSubmit={async (values) => {
             const formData = { ...values, date: selectedDate };
-            setFormData(formData);
+            await saveDataToFirestore(formData);
             navigateToWorkOut();
           }}
         >
+          {/* <Formik
+          initialValues={{ title: '', content: '', others: '' }}
+          validationSchema={validationSchema}
+          onSubmit={async (values) => {
+            const formData = { ...values, date: selectedDate };
+            console.log('Form submitted:', formData); // デバッグ用ログ
+            try {
+              await saveDataToFirestore(formData); // Firestoreにデータを保存
+              console.log('Navigating to WorkOutPage');
+              navigateToWorkOut(); // フォーム送信後にWorkOutPageに遷移
+            } catch (error) {
+              console.error('Error during submission:', error); // エラーをキャッチしてログに出力
+            }
+          }}
+        > */}
           {(
             props: FormikProps<{
               title: string;
@@ -146,7 +179,10 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
                 <View style={FormStyles.confirmButtonContainer}>
                   <ButtonAtoms
                     buttonText={FORM_MESSAGE.SEND_BUTTON_TEXT}
-                    onPress={handleSubmit}
+                    onPress={() => {
+                      console.log('Submit button pressed'); // デバッグ用ログ
+                      handleSubmit();
+                    }}
                     buttonStyle={FormStyles.confirmButton}
                     textStyle={FormStyles.confirmButtonText}
                   />

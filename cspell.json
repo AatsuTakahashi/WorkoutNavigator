@@ -1,11 +1,13 @@
 {
   "ignoreWords": [
+    "workoutnavigator",
     "fortawesome",
     "fontawesome",
     "Pressable",
-    "formik"
+    "formik",
+    "firebaseapp",
+    "appspot",
+    "firestore"
   ],
-  "words": [
-    "datetimepicker"
-  ]
+  "words": ["datetimepicker", "FJYFS"]
 }
