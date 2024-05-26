@@ -27,7 +27,7 @@ interface InputFormProps {
   }) => void;
 }
 
-const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
+const InputForm: React.FC<InputFormProps> = () => {
   const { navigateToWorkOut } = useAppNavigation();
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);

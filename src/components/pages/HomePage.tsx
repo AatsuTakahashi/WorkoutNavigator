@@ -1,14 +1,18 @@
 import React from 'react';
-import MainTemplate from '../templates/MainTemplate/MainTemplate';
+import MainTemplate from '../templates/MainTemplate';
 import WelcomeMessage from '../atoms/message/WelcomeMessage';
 import { WELCOME_MESSAGE } from '../../constants/Message';
-import { Text } from 'react-native';
 import HomeContent from '../organisms/home/HomeContent';
+import { MainTemplateStyles } from '../templates/Template.module';
+import { WelcomeMessageStyle } from '../atoms/message/WelcomeMessage.module';
 
 const HomePage: React.FC = () => {
   return (
-    <MainTemplate>
-      <WelcomeMessage message={WELCOME_MESSAGE.HOME_MESSAGE} />
+    <MainTemplate templateStyle={MainTemplateStyles.container}>
+      <WelcomeMessage
+        message={WELCOME_MESSAGE.HOME_MESSAGE}
+        TextStyle={WelcomeMessageStyle.messageText_black}
+      />
       <HomeContent />
     </MainTemplate>
   );

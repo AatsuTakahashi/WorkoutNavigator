@@ -32,8 +32,11 @@ const ManagementWorkOut: React.FC = () => {
         ) : (
           workouts.map((workout) => (
             <View key={workout.id} style={WorkOutStyles.content}>
-              <Text>{workout.date ? formatDate(workout.date) : ''}</Text>
-              <Text>{workout.title}</Text>
+              <Text style={WorkOutStyles.TitleText}>
+                {workout.date ? formatDate(workout.date) : ''}
+              </Text>
+              <Text style={WorkOutStyles.contentText}>{workout.title}</Text>
+              <Text style={WorkOutStyles.detailText}>詳細を見る</Text>
             </View>
           ))
         )}
