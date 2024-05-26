@@ -7,36 +7,39 @@ import { StyleSheet, View } from 'react-native';
 import { Header } from './src/components/organisms/header/Header';
 import { Footer } from './src/components/organisms/footer/Footer';
 import WorkOutRecordPage from './src/components/pages/WorkOutRecordPage';
+import { FormProvider } from './src/context/FormContext';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={AppStyles.container}>
-      <Header />
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='WorkOutRecord'>
-          <Stack.Screen
-            name='Home'
-            component={HomePage}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name='WorkOut'
-            component={WorkOutPage}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name='WorkOutRecord'
-            component={WorkOutRecordPage}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-        <Footer />
-      </NavigationContainer>
-    </View>
+    <FormProvider>
+      <View style={AppStyles.container}>
+        <Header />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='WorkOutRecord'>
+            <Stack.Screen
+              name='Home'
+              component={HomePage}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name='WorkOut'
+              component={WorkOutPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='WorkOutRecord'
+              component={WorkOutRecordPage}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+          <Footer />
+        </NavigationContainer>
+      </View>
+    </FormProvider>
   );
 }
 

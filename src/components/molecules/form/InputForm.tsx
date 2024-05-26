@@ -13,8 +13,22 @@ import CalenderModal from '../../atoms/input/CalenderModal';
 import { format } from 'date-fns';
 import { FormStyles } from './InputForm.module';
 import { FORM_MESSAGE } from '../../../constants/Message';
+import { useFormData } from '../../../context/FormContext';
+import { useNavigation } from '@react-navigation/native';
+import { useAppNavigation } from '../../../navigation/Navigation';
 
-const InputForm: React.FC = () => {
+interface InputFormProps {
+  onSubmit: (values: {
+    title: string;
+    content: string;
+    others: string;
+    date: Date | null;
+  }) => void;
+}
+
+const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
+  const { setFormData } = useFormData();
+  const { navigateToWorkOut } = useAppNavigation();
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
@@ -44,7 +58,9 @@ const InputForm: React.FC = () => {
           initialValues={{ title: '', content: '', others: '' }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            console.log('フォームの値:', { ...values, date: selectedDate });
+            const formData = { ...values, date: selectedDate };
+            setFormData(formData);
+            navigateToWorkOut();
           }}
         >
           {(
