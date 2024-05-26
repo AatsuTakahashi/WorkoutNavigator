@@ -28,7 +28,6 @@ interface InputFormProps {
 }
 
 const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
-  const { setFormData } = useFormData();
   const { navigateToWorkOut } = useAppNavigation();
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -58,11 +57,8 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
     others: string;
     date: Date | null;
   }) => {
-    console.log('Inside saveDataToFirestore'); // デバッグ用ログ
     try {
-      console.log('Attempting to save data to Firestore:', data); // デバッグ用ログ
       await addDoc(collection(db, 'workouts'), data);
-      console.log('Data saved successfully');
     } catch (error) {
       console.error('Error saving data:', error);
       throw error; // エラーを再スロー
@@ -81,21 +77,6 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
             navigateToWorkOut();
           }}
         >
-          {/* <Formik
-          initialValues={{ title: '', content: '', others: '' }}
-          validationSchema={validationSchema}
-          onSubmit={async (values) => {
-            const formData = { ...values, date: selectedDate };
-            console.log('Form submitted:', formData); // デバッグ用ログ
-            try {
-              await saveDataToFirestore(formData); // Firestoreにデータを保存
-              console.log('Navigating to WorkOutPage');
-              navigateToWorkOut(); // フォーム送信後にWorkOutPageに遷移
-            } catch (error) {
-              console.error('Error during submission:', error); // エラーをキャッチしてログに出力
-            }
-          }}
-        > */}
           {(
             props: FormikProps<{
               title: string;
@@ -180,7 +161,6 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit }) => {
                   <ButtonAtoms
                     buttonText={FORM_MESSAGE.SEND_BUTTON_TEXT}
                     onPress={() => {
-                      console.log('Submit button pressed'); // デバッグ用ログ
                       handleSubmit();
                     }}
                     buttonStyle={FormStyles.confirmButton}

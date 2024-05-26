@@ -6,6 +6,7 @@ import { WorkOutStyles } from './ManagementWorkOut.module';
 import { useAppNavigation } from '../../../navigation/Navigation';
 import useFetchCollection from '../../../hooks/useFetchCollection';
 import { formatDate } from '../../../utils/dataFormatter';
+import { COLOR_CODE } from '../../../constants/ColorCode';
 
 const ManagementWorkOut: React.FC = () => {
   const { navigateToWorkOutRecord } = useAppNavigation();
@@ -19,15 +20,19 @@ const ManagementWorkOut: React.FC = () => {
         buttonStyle={WorkOutStyles.buttonStyles}
         textStyle={WorkOutStyles.buttonText}
       />
-      <ScrollView>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        horizontal={true}
+        style={WorkOutStyles.formDataContainer}
+      >
         {loading ? (
-          <ActivityIndicator size={'large'} color='#0000ff' />
+          <ActivityIndicator size={'large'} color={COLOR_CODE.SILVERY_WHITE} />
         ) : error ? (
           <Text>{error}</Text>
         ) : (
           workouts.map((workout) => (
-            <View key={workout.id}>
-              <Text>{workout.date ? formatDate(workout.date) : 'No Date'}</Text>
+            <View key={workout.id} style={WorkOutStyles.content}>
+              <Text>{workout.date ? formatDate(workout.date) : ''}</Text>
               <Text>{workout.title}</Text>
             </View>
           ))

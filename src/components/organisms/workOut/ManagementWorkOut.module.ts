@@ -16,24 +16,17 @@ export const WorkOutStyles = StyleSheet.create({
     fontSize: 20,
   },
   formDataContainer: {
-    // borderWidth: 1,
     top: 30,
     padding: 10,
     margin: 10,
     flexDirection: 'row',
   },
-  test1: {
+  content: {
     borderWidth: 1,
-    padding: 5,
+    borderRadius: 20,
+    padding: 10,
     margin: 10,
     height: 150,
-    width: 110,
-  },
-  test2: {
-    borderWidth: 1,
-    padding: 5,
-    margin: 10,
-    height: 150,
-    width: 110,
+    width: 120,
   },
 });
