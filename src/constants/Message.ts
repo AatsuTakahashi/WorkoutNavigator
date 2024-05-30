@@ -16,6 +16,7 @@ export const SHARE_GROUP_MESSAGE = {
 export const BUTTON_TEXT_MESSAGE = {
   RECORD_WORK_OUT: 'ワークアウトを記録する',
   GO_BACK: '戻る',
+  DETAIL_TASK: '詳細を見る',
 };
 export const PLACEHOLDER_MESSAGE = {
   INITIAL_VALUE: '入力してください。',

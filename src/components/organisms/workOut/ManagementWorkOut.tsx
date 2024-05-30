@@ -43,7 +43,9 @@ const ManagementWorkOut: React.FC = () => {
                 {workout.date ? formatDate(workout.date) : ''}
               </Text>
               <Text style={WorkOutStyles.contentText}>{workout.title}</Text>
-              <Text style={WorkOutStyles.detailText}>詳細を見る</Text>
+              <Text style={WorkOutStyles.detailText}>
+                {BUTTON_TEXT_MESSAGE.DETAIL_TASK}
+              </Text>
             </LinearGradient>
           ))
         )}
