@@ -1,5 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
+import {
+  ActivityIndicator,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
 import ButtonAtoms from '../../atoms/button/ButtonAtoms';
 import { BUTTON_TEXT_MESSAGE } from '../../../constants/Message';
 import { WorkOutStyles } from './ManagementWorkOut.module';
@@ -8,10 +14,15 @@ import useFetchCollection from '../../../hooks/useFetchCollection';
 import { formatDate } from '../../../utils/dataFormatter';
 import { COLOR_CODE } from '../../../constants/ColorCode';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Workout } from '../../../types/WorkOut';
 
 const ManagementWorkOut: React.FC = () => {
-  const { navigateToWorkOutRecord } = useAppNavigation();
+  const { navigateToWorkOutRecord, navigateToDetailTask } = useAppNavigation();
   const { data: workouts, loading, error } = useFetchCollection('workouts');
+
+  const handleTaskPress = (workout: Workout) => {
+    navigateToDetailTask(workout);
+  };
 
   return (
     <View>
@@ -32,21 +43,25 @@ const ManagementWorkOut: React.FC = () => {
           <Text>{error}</Text>
         ) : (
           workouts.map((workout) => (
-            <LinearGradient
-              colors={[COLOR_CODE.WHITE_SMOKE, COLOR_CODE.DARK_BLACK]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
+            <Pressable
               key={workout.id}
-              style={WorkOutStyles.content}
+              onPress={() => handleTaskPress(workout)}
             >
-              <Text style={WorkOutStyles.TitleText}>
-                {workout.date ? formatDate(workout.date) : ''}
-              </Text>
-              <Text style={WorkOutStyles.contentText}>{workout.title}</Text>
-              <Text style={WorkOutStyles.detailText}>
-                {BUTTON_TEXT_MESSAGE.DETAIL_TASK}
-              </Text>
-            </LinearGradient>
+              <LinearGradient
+                colors={[COLOR_CODE.WHITE_SMOKE, COLOR_CODE.DARK_BLACK]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={WorkOutStyles.content}
+              >
+                <Text style={WorkOutStyles.TitleText}>
+                  {workout.date ? formatDate(workout.date) : ''}
+                </Text>
+                <Text style={WorkOutStyles.contentText}>{workout.title}</Text>
+                <Text style={WorkOutStyles.detailText}>
+                  {BUTTON_TEXT_MESSAGE.DETAIL_TASK}
+                </Text>
+              </LinearGradient>
+            </Pressable>
           ))
         )}
       </ScrollView>

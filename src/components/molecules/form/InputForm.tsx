@@ -17,17 +17,9 @@ import { useFormData } from '../../../context/FormContext';
 import { useAppNavigation } from '../../../navigation/Navigation';
 import { db } from '../../../../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
+import { Workout } from '../../../types/WorkOut';
 
-interface InputFormProps {
-  onSubmit: (values: {
-    title: string;
-    content: string;
-    others: string;
-    date: Date | null;
-  }) => void;
-}
-
-const InputForm: React.FC<InputFormProps> = () => {
+const InputForm: React.FC = () => {
   const { navigateToWorkOut } = useAppNavigation();
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -51,12 +43,7 @@ const InputForm: React.FC<InputFormProps> = () => {
     others: Yup.string(),
   });
 
-  const saveDataToFirestore = async (data: {
-    title: string;
-    content: string;
-    others: string;
-    date: Date | null;
-  }) => {
+  const saveDataToFirestore = async (data: Workout) => {
     try {
       await addDoc(collection(db, 'workouts'), data);
     } catch (error) {
@@ -71,8 +58,8 @@ const InputForm: React.FC<InputFormProps> = () => {
         <Formik
           initialValues={{ title: '', content: '', others: '' }}
           validationSchema={validationSchema}
-          onSubmit={async (values) => {
-            const formData = { ...values, date: selectedDate };
+          onSubmit={async (values: Omit<Workout, 'date'>) => {
+            const formData: Workout = { ...values, date: selectedDate };
             await saveDataToFirestore(formData);
             navigateToWorkOut();
           }}

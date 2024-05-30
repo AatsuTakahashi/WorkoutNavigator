@@ -8,6 +8,7 @@ import { Header } from './src/components/organisms/header/Header';
 import { Footer } from './src/components/organisms/footer/Footer';
 import WorkOutRecordPage from './src/components/pages/WorkOutRecordPage';
 import { FormProvider } from './src/context/FormContext';
+import DetailTaskPage from './src/components/pages/DetailTaskPage';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,11 @@ export default function App() {
             <Stack.Screen
               name='WorkOutRecord'
               component={WorkOutRecordPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='DetailTask'
+              component={DetailTaskPage}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
