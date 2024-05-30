@@ -20,6 +20,8 @@
     "@types/react-native-modal": "^4.1.1",
     "date-fns": "^3.6.0",
     "expo": "~51.0.4",
+    "expo-cli": "^6.3.10",
+    "expo-linear-gradient": "~13.0.2",
     "expo-status-bar": "~1.12.1",
     "firebase": "^10.12.1",
     "formik": "^2.4.6",

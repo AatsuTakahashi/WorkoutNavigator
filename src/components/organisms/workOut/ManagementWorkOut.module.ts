@@ -5,7 +5,7 @@ export const WorkOutStyles = StyleSheet.create({
   buttonStyles: {
     margin: 20,
     padding: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 50,
     borderColor: COLOR_CODE.WHITE,
     height: 50,
@@ -49,10 +49,10 @@ export const WorkOutStyles = StyleSheet.create({
   detailText: {
     fontSize: 12,
     paddingRight: 5,
-    paddingBottom: 5,
+    paddingBottom: 7,
     position: 'absolute',
     bottom: 0,
     right: 5,
-    color: COLOR_CODE.WHITE,
+    color: COLOR_CODE.TRANSLUCENT_WHITE_SMOKE,
   },
 });

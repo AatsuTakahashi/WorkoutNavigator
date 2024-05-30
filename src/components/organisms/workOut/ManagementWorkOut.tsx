@@ -7,6 +7,7 @@ import { useAppNavigation } from '../../../navigation/Navigation';
 import useFetchCollection from '../../../hooks/useFetchCollection';
 import { formatDate } from '../../../utils/dataFormatter';
 import { COLOR_CODE } from '../../../constants/ColorCode';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const ManagementWorkOut: React.FC = () => {
   const { navigateToWorkOutRecord } = useAppNavigation();
@@ -31,13 +32,19 @@ const ManagementWorkOut: React.FC = () => {
           <Text>{error}</Text>
         ) : (
           workouts.map((workout) => (
-            <View key={workout.id} style={WorkOutStyles.content}>
+            <LinearGradient
+              colors={[COLOR_CODE.WHITE_SMOKE, COLOR_CODE.DARK_BLACK]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              key={workout.id}
+              style={WorkOutStyles.content}
+            >
               <Text style={WorkOutStyles.TitleText}>
                 {workout.date ? formatDate(workout.date) : ''}
               </Text>
               <Text style={WorkOutStyles.contentText}>{workout.title}</Text>
               <Text style={WorkOutStyles.detailText}>詳細を見る</Text>
-            </View>
+            </LinearGradient>
           ))
         )}
       </ScrollView>
