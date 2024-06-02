@@ -14,3 +14,10 @@ export const WorkOutTemplateStyles = StyleSheet.create({
     backgroundColor: COLOR_CODE.DARK_BLACK,
   },
 });
+
+export const TaskTemplateStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 100,
+  },
+});

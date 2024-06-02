@@ -7,12 +7,12 @@ export const FormStyles = StyleSheet.create({
     margin: 10,
     height: 500,
     padding: 10,
-    borderWidth: 2,
-    borderColor: COLOR_CODE.WHITE_SMOKE,
-    borderRadius: 10,
   },
   datePickerButton: {
     padding: 5,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: COLOR_CODE.SILVERY_WHITE,
   },
   datePickerButtonText: {
     color: COLOR_CODE.SILVERY_WHITE,
@@ -21,20 +21,22 @@ export const FormStyles = StyleSheet.create({
     color: COLOR_CODE.JET_BLACK,
   },
   formText: {
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 10,
+    paddingBottom: 10,
     fontWeight: '500',
     fontSize: 15,
   },
   textInput_title: {
     borderWidth: 1,
     borderRadius: 5,
+    borderColor: COLOR_CODE.SILVERY_WHITE,
     height: 40,
     padding: 10,
   },
   textInput_content: {
     borderWidth: 1,
     borderRadius: 5,
+    borderColor: COLOR_CODE.SILVERY_WHITE,
     height: 100,
     textAlignVertical: 'top',
     padding: 10,
@@ -42,6 +44,7 @@ export const FormStyles = StyleSheet.create({
   textInput_others: {
     borderWidth: 1,
     borderRadius: 5,
+    borderColor: COLOR_CODE.SILVERY_WHITE,
     height: 160,
     textAlignVertical: 'top',
     padding: 10,

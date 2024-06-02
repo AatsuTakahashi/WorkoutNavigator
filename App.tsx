@@ -10,6 +10,7 @@ import WorkOutRecordPage from './src/components/pages/WorkOutRecordPage';
 import { FormProvider } from './src/context/FormContext';
 import DetailTaskPage from './src/components/pages/DetailTaskPage';
 import { RootStackParamList } from './src/RootStackParamList/RootStackParamList';
+import RootNavigator from './src/components/templates/RootNavigator';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -17,33 +18,8 @@ export default function App() {
   return (
     <FormProvider>
       <View style={AppStyles.container}>
-        <Header />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName='WorkOut'>
-            <Stack.Screen
-              name='Home'
-              component={HomePage}
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name='WorkOut'
-              component={WorkOutPage}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name='WorkOutRecord'
-              component={WorkOutRecordPage}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name='DetailTask'
-              component={DetailTaskPage}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-          <Footer />
+          <RootNavigator />
         </NavigationContainer>
       </View>
     </FormProvider>

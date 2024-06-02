@@ -1,20 +1,23 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { TaskProps } from '../../types/WorkOut';
-import { formatFullDate } from '../../utils/dataFormatter';
+import MainTemplate from '../templates/MainTemplate';
+import { TaskTemplateStyles } from '../templates/Template.module';
+import GoBack from '../molecules/transition/GoBack';
+import Task from '../molecules/workOut/Task';
+import { TaskStyle } from '../molecules/workOut/Task.module';
 
-const DetailTaskPage: React.FC<TaskProps> = ({ route }) => {
-  const { workout } = route.params;
-
-  const formattedDate = workout.date ? formatFullDate(workout.date) : '';
-
+const DetailTaskPage: React.FC<TaskProps> = ({ route, navigation }) => {
   return (
-    <View>
-      <Text>{workout.title}</Text>
-      <Text>{workout.content}</Text>
-      <Text>{workout.others}</Text>
-      <Text>{formattedDate}</Text>
-    </View>
+    <MainTemplate templateStyle={TaskTemplateStyles.container}>
+      <View style={TaskStyle.functionalContainer}>
+        <GoBack />
+        <Text>編集する</Text>
+      </View>
+      <View>
+        <Task route={route} navigation={navigation} />
+      </View>
+    </MainTemplate>
   );
 };
 

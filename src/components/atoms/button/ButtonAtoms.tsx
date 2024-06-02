@@ -6,13 +6,14 @@ import {
   Pressable,
   ViewStyle,
   TextStyle,
+  StyleProp,
 } from 'react-native';
 
 interface ButtonAtomsProps {
   buttonText: string;
   onPress: () => void;
-  buttonStyle?: ViewStyle;
-  textStyle?: TextStyle;
+  buttonStyle?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 }
 
 const ButtonAtoms: React.FC<ButtonAtomsProps> = ({

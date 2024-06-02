@@ -13,7 +13,6 @@ import CalenderModal from '../../atoms/input/CalenderModal';
 import { format } from 'date-fns';
 import { FormStyles } from './InputForm.module';
 import { FORM_MESSAGE } from '../../../constants/Message';
-import { useFormData } from '../../../context/FormContext';
 import { useAppNavigation } from '../../../navigation/Navigation';
 import { db } from '../../../../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
@@ -108,6 +107,7 @@ const InputForm: React.FC = () => {
                   <Text style={FormStyles.formText}>
                     {FORM_MESSAGE.FORM_TITLE}
                   </Text>
+
                   <TextInput
                     placeholder={FORM_MESSAGE.TEXT_INPUT}
                     onChangeText={handleChange('title')}
@@ -115,6 +115,7 @@ const InputForm: React.FC = () => {
                     value={values.title}
                     style={FormStyles.textInput_title}
                   />
+
                   {touched.title && errors.title && (
                     <Text style={FormStyles.errorText}>{errors.title}</Text>
                   )}
