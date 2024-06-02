@@ -9,8 +9,9 @@ import { Footer } from './src/components/organisms/footer/Footer';
 import WorkOutRecordPage from './src/components/pages/WorkOutRecordPage';
 import { FormProvider } from './src/context/FormContext';
 import DetailTaskPage from './src/components/pages/DetailTaskPage';
+import { RootStackParamList } from './src/RootStackParamList/RootStackParamList';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
