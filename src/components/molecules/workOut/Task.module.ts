@@ -40,4 +40,12 @@ export const TaskStyle = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
   },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: '#fff',
+    marginBottom: 8,
+  },
 });

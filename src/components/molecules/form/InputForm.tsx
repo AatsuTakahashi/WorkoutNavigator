@@ -17,6 +17,7 @@ import { useAppNavigation } from '../../../navigation/Navigation';
 import { db } from '../../../../firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 import { Workout } from '../../../types/WorkOut';
+import { COLOR_CODE } from '../../../constants/ColorCode';
 
 const InputForm: React.FC = () => {
   const { navigateToWorkOut } = useAppNavigation();
@@ -55,7 +56,7 @@ const InputForm: React.FC = () => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View>
         <Formik
-          initialValues={{ title: '', content: '', others: '' }}
+          initialValues={{ id: '', title: '', content: '', others: '' }}
           validationSchema={validationSchema}
           onSubmit={async (values: Omit<Workout, 'date'>) => {
             const formData: Workout = { ...values, date: selectedDate };
@@ -65,6 +66,7 @@ const InputForm: React.FC = () => {
         >
           {(
             props: FormikProps<{
+              id: string;
               title: string;
               content: string;
               others: string;
@@ -110,6 +112,11 @@ const InputForm: React.FC = () => {
 
                   <TextInput
                     placeholder={FORM_MESSAGE.TEXT_INPUT}
+                    placeholderTextColor={
+                      selectedDate
+                        ? COLOR_CODE.JET_BLACK
+                        : COLOR_CODE.SILVERY_WHITE
+                    }
                     onChangeText={handleChange('title')}
                     onBlur={handleBlur('title')}
                     value={values.title}
@@ -124,6 +131,11 @@ const InputForm: React.FC = () => {
                   </Text>
                   <TextInput
                     placeholder={FORM_MESSAGE.TEXT_INPUT}
+                    placeholderTextColor={
+                      selectedDate
+                        ? COLOR_CODE.JET_BLACK
+                        : COLOR_CODE.SILVERY_WHITE
+                    }
                     onChangeText={handleChange('content')}
                     onBlur={handleBlur('content')}
                     value={values.content}

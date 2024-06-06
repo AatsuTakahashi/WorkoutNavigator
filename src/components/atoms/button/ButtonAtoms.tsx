@@ -14,6 +14,7 @@ interface ButtonAtomsProps {
   onPress: () => void;
   buttonStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  disabled?: boolean;
 }
 
 const ButtonAtoms: React.FC<ButtonAtomsProps> = ({
