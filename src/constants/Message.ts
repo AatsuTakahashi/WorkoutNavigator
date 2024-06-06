@@ -35,4 +35,10 @@ export const FORM_MESSAGE = {
   SEND_BUTTON_TEXT: '送信',
   VALIDATION_TITLE: 'タイトルは必須です。',
   VALIDATION_CONTENT: '内容は必須です。',
+  EDIT_BUTTON_TEXT: '編集する',
+  EDIT_TITLE: '編集したタイトルを入力してください',
+  EDIT_CONTENT: '編集した内容を入力してください',
+  EDIT_OTHERS: '編集したメモを入力してください',
+  CANCEL_BUTTON_TEXT: 'キャンセル',
+  SAVE_BUTTON_TEXT: '保存する',
 };

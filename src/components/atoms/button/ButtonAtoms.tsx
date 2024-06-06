@@ -22,11 +22,12 @@ const ButtonAtoms: React.FC<ButtonAtomsProps> = ({
   onPress,
   buttonStyle,
   textStyle,
+  disabled,
 }) => {
   return (
     <SafeAreaView>
       <View>
-        <Pressable onPress={onPress} style={buttonStyle}>
+        <Pressable onPress={onPress} style={buttonStyle} disabled={disabled}>
           <Text style={textStyle}>{buttonText}</Text>
         </Pressable>
       </View>

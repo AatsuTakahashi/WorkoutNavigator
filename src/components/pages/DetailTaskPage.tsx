@@ -10,6 +10,8 @@ import { handleEditToggle } from '../../utils/handleEditToggle';
 import { handleSave } from '../../utils/handleSave';
 import { fetchUpdateData } from '../../utils/fetchUpdateData';
 import ButtonAtoms from '../atoms/button/ButtonAtoms';
+import { COLOR_CODE } from '../../constants/ColorCode';
+import { FORM_MESSAGE } from '../../constants/Message';
 
 const DetailTaskPage: React.FC<TaskProps> = ({ route, navigation }) => {
   const { workout } = route.params;
@@ -41,8 +43,7 @@ const DetailTaskPage: React.FC<TaskProps> = ({ route, navigation }) => {
     }
   }, [isEditing]);
 
-  const isSaveDisabled =
-    title === '' || content === '' || date === null || others === '';
+  const isSaveDisabled = title === '' || content === '' || date === null;
 
   return (
     <MainTemplate templateStyle={TaskTemplateStyles.container}>
@@ -65,17 +66,23 @@ const DetailTaskPage: React.FC<TaskProps> = ({ route, navigation }) => {
                   setIsEditing
                 )
               }
-              buttonText='保存'
+              buttonText={FORM_MESSAGE.SAVE_BUTTON_TEXT}
+              disabled={isSaveDisabled}
+              textStyle={
+                isSaveDisabled
+                  ? { color: COLOR_CODE.SILVERY_WHITE }
+                  : { color: COLOR_CODE.JET_BLACK }
+              }
             />
             <ButtonAtoms
               onPress={() => handleEditToggle(isEditing, setIsEditing)}
-              buttonText='キャンセル'
+              buttonText={FORM_MESSAGE.CANCEL_BUTTON_TEXT}
             />
           </>
         ) : (
           <ButtonAtoms
             onPress={() => handleEditToggle(isEditing, setIsEditing)}
-            buttonText='編集'
+            buttonText={FORM_MESSAGE.EDIT_BUTTON_TEXT}
           />
         )}
       </View>

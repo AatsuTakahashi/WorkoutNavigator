@@ -39,7 +39,7 @@ const Task: React.FC<TaskComponentProps> = ({
             id='title'
             value={title}
             onChangeText={setTitle}
-            placeholder='編集したタイトルを入力してください'
+            placeholder={FORM_MESSAGE.EDIT_TITLE}
             placeholderTextColor={COLOR_CODE.SILVERY_WHITE}
             style={TaskStyle.textInput}
           />
@@ -48,7 +48,8 @@ const Task: React.FC<TaskComponentProps> = ({
             id='content'
             value={content}
             onChangeText={setContent}
-            placeholder='内容'
+            placeholder={FORM_MESSAGE.EDIT_CONTENT}
+            placeholderTextColor={COLOR_CODE.SILVERY_WHITE}
             style={TaskStyle.textInput}
             multiline
           />
@@ -57,7 +58,8 @@ const Task: React.FC<TaskComponentProps> = ({
             id='others'
             value={others}
             onChangeText={setOthers}
-            placeholder='その他'
+            placeholder={FORM_MESSAGE.EDIT_OTHERS}
+            placeholderTextColor={COLOR_CODE.SILVERY_WHITE}
             style={TaskStyle.textInput}
             multiline
           />
