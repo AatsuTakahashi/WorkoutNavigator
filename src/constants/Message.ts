@@ -1,6 +1,7 @@
 export const WELCOME_MESSAGE = {
   WORK_OUT_MESSAGE: 'ワークアウトを管理しましょう',
   HOME_MESSAGE: 'ようこそ',
+  ACTIVITY_MESSAGE: 'アクティビティ',
 };
 
 export const SETTING_MESSAGE = {

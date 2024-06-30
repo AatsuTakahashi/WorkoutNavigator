@@ -11,6 +11,7 @@ import WorkOutPage from '../pages/WorkOutPage';
 import WorkOutRecordPage from '../pages/WorkOutRecordPage';
 import DetailTaskPage from '../pages/DetailTaskPage';
 import { Footer } from '../organisms/footer/Footer';
+import ActivityPage from '../pages/ActivityPage';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -21,7 +22,7 @@ const RootNavigator = () => {
   return (
     <>
       {currentRouteName !== 'DetailTask' && <Header />}
-      <Stack.Navigator initialRouteName='WorkOut'>
+      <Stack.Navigator initialRouteName='Activity'>
         <Stack.Screen
           name='Home'
           component={HomePage}
@@ -32,6 +33,11 @@ const RootNavigator = () => {
         <Stack.Screen
           name='WorkOut'
           component={WorkOutPage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='Activity'
+          component={ActivityPage}
           options={{ headerShown: false }}
         />
         <Stack.Screen

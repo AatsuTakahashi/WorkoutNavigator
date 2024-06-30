@@ -11,6 +11,10 @@ export const useAppNavigation = () => {
     navigation.navigate('WorkOut');
   };
 
+  const navigateToActivity = () => {
+    navigation.navigate('Activity');
+  };
+
   const navigateToWorkOutRecord = () => {
     navigation.navigate('WorkOutRecord');
   };
@@ -23,6 +27,7 @@ export const useAppNavigation = () => {
     navigation,
     navigateToHome,
     navigateToWorkOut,
+    navigateToActivity,
     navigateToWorkOutRecord,
     navigateToDetailTask,
   };

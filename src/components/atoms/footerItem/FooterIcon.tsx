@@ -25,10 +25,12 @@ export const HomeIcon: React.FC<PressableProps> = ({ onPress }) => {
   );
 };
 
-export const ActivityIcon = () => {
+export const ActivityIcon: React.FC<PressableProps> = ({ onPress }) => {
   return (
     <View style={footerIconStyles.container}>
-      <Feather name='activity' size={25} />
+      <Pressable onPress={onPress}>
+        <Feather name='activity' size={25} />
+      </Pressable>
     </View>
   );
 };
