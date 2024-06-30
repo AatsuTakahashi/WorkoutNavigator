@@ -5,4 +5,5 @@ export type RootStackParamList = {
   WorkOut: undefined;
   WorkOutRecord: undefined;
   DetailTask: { workout: Workout };
+  SignIn: undefined;
 };

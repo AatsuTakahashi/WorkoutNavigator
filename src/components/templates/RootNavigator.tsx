@@ -1,16 +1,14 @@
 import React from 'react';
 import { RootStackParamList } from '../../RootStackParamList/RootStackParamList';
 import { createStackNavigator } from '@react-navigation/stack';
-import {
-  NavigationContainer,
-  useNavigationState,
-} from '@react-navigation/native';
+import { useNavigationState } from '@react-navigation/native';
 import { Header } from '../organisms/header/Header';
 import HomePage from '../pages/HomePage';
 import WorkOutPage from '../pages/WorkOutPage';
 import WorkOutRecordPage from '../pages/WorkOutRecordPage';
 import DetailTaskPage from '../pages/DetailTaskPage';
 import { Footer } from '../organisms/footer/Footer';
+import SignInPage from '../pages/SignInPage';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -21,7 +19,7 @@ const RootNavigator = () => {
   return (
     <>
       {currentRouteName !== 'DetailTask' && <Header />}
-      <Stack.Navigator initialRouteName='WorkOut'>
+      <Stack.Navigator initialRouteName='SignIn'>
         <Stack.Screen
           name='Home'
           component={HomePage}
